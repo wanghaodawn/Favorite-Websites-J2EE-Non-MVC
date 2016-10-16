@@ -1,0 +1,29 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>Favorite Website via SQL</display-name>
+    <description>
+      Example of the use of SQL and JDBC
+    </description>
+
+    <servlet>
+        <servlet-name>my-servlet</servlet-name>
+        <servlet-class>
+        	FavoriteWebsites
+        </servlet-class>
+        <init-param>
+            <param-name>   jdbcDriver             </param-name> 
+            <param-value>  com.mysql.jdbc.Driver  </param-value>
+        </init-param>
+        <init-param>
+            <param-name>   jdbcURL                </param-name> 
+            <param-value>  jdbc:mysql:///test?useSSL=false     </param-value>
+        </init-param>
+    </servlet>
+    <welcome-file-list>
+        <welcome-file>FavoriteWebsites</welcome-file>
+    </welcome-file-list>
+</web-app>
